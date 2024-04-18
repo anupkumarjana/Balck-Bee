@@ -2,17 +2,23 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { FaRegWindowClose } from "react-icons/fa";
-import { CiFacebook, CiLinkedin, CiTwitter } from "react-icons/ci";
-import { CiInstagram } from "react-icons/ci";
+// import { CiFacebook, CiLinkedin, CiTwitter } from "react-icons/ci";
+// import { CiInstagram } from "react-icons/ci";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
 
-const Header = () => {
+const Header = ({ themeToggler }) => {
   const [isShow, setIsShow] = useState(false);
   // const [isScrolled, setIsScrolled] = useState(false);
+  const [isDarkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = (checked) => {
+    setDarkMode(checked);
+  };
 
   // useEffect(() => {
   //   const handleScroll = () => {
-  //     const scrollPosition = window.scrollY;
-  //     if (scrollPosition > 0) {
+  //     const offset = window.scrollY;
+  //     if (offset > 0) {
   //       setIsScrolled(true);
   //     } else {
   //       setIsScrolled(false);
@@ -27,9 +33,15 @@ const Header = () => {
   // }, []);
 
   return (
-    <header className="w-full fixed z-20 bg-[#343434] text-white">
+    <header
+      className={`w-full fixed z-20  shadow-lg ${
+        !isDarkMode
+          ? "bg-[#343434] text-white transition-all ease-in-out duration-1000"
+          : "bg-white text-black"
+      }`}
+    >
       <>
-        <nav className="flex lg:px-20 px-10 py-4 w-full justify-between">
+        <nav className="flex lg:px-20 px-10 py-6 w-full justify-between items-center">
           <h1 className="text-xl font-bold font-montserrat">
             <Link to="/">blackBee.</Link>{" "}
           </h1>
@@ -52,7 +64,21 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <div className="lg:block hidden">
+          <button onClick={themeToggler}>
+            <DarkModeSwitch
+              // style={{ marginBottom: "2rem" }}
+              style={{
+                color: "black",
+                fill: "black",
+                stroke: "currentColor",
+              }}
+              checked={isDarkMode}
+              onChange={toggleDarkMode}
+              size={30}
+              // onChangeCapture={}
+            />
+          </button>
+          {/* <div className="lg:block hidden">
             <div className="flex gap-2 justify-center items-center ">
               <span className="cursor-pointer">
                 <a href="https://facebook.com">
@@ -69,7 +95,7 @@ const Header = () => {
                 <CiLinkedin />
               </span>
             </div>
-          </div>
+          </div> */}
 
           <button
             className="block lg:hidden text-xl font-semibold transition-all ease-in-out duration-200"
@@ -87,19 +113,19 @@ const Header = () => {
             </button>
             <ul className="flex flex-col justify-center gap-10 font-outfit">
               <li className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100">
-                Home
+                <Link to="/">Home</Link>
               </li>
               <li className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100">
-                About Us
+                <Link to="/about"> About Us</Link>
               </li>
               <li className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100">
-                Services
+                <Link to="/services">Services</Link>
               </li>
               <li className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100">
-                Blogs
+                <Link to="blogs">Blogs</Link>
               </li>
               <li className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100">
-                Contact Us
+                <Link to="/contact">Contact Us</Link>
               </li>
             </ul>
           </nav>

@@ -67,10 +67,14 @@ const Footer = () => {
                 <span>info@blackbee-digital.com</span>
               </Link>
             </li>
-            <li className="cursor-pointer hover:text-orange-500 flex gap-2 items-center">
-              <span className="text-orange-500 text-lg">
-                <FaPhoneVolume />
-              </span>
+            <li className="cursor-pointer hover:text-orange-500  flex gap-2 items-center  ">
+              <Link className="flex gap-2 items-center" to="tel:+919832781092">
+                {" "}
+                <span className="text-orange-500 text-lg">
+                  <FaPhoneVolume />
+                </span>
+              </Link>
+
               <span>+91 9832781092</span>
             </li>
           </ul>

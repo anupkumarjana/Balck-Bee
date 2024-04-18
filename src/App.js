@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -7,13 +7,25 @@ import BlogsPage from "./pages/BlogsPage";
 import ContactPage from "./pages/ContactPage";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./darkmode/globalStyles";
+import { lightTheme, darkTheme } from "./darkmode/Theme";
 
 const App = () => {
+  const [theme, setTheme] = useState("light");
+  const themeToggler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
   return (
-    <div>
-      <Header />
-      <Outlet />
-      <Footer />
+    <div className=" ">
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <>
+          <GlobalStyles />
+          <Header themeToggler={themeToggler} />
+          <Outlet />
+          <Footer />
+        </>
+      </ThemeProvider>
     </div>
   );
 };

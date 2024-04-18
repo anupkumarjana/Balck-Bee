@@ -8,11 +8,17 @@ body {
 }
 
 .bg-gradient {
-  background: rgb(227, 238, 249);
+  /* background: rgb(227, 238, 249);
   background: linear-gradient(
     260deg,
     rgba(227, 238, 249, 1) 4%,
     rgba(113, 29, 176, 1) 100%
+  ); */
+  background: rgb(6, 59, 112);
+  background: radial-gradient(
+    circle,
+    rgba(6, 59, 112, 1) 100%,
+    rgba(176, 158, 29, 0.6268714028580182) 100%
   );
 }
 
@@ -69,4 +75,7 @@ body {
   position: -webkit-sticky;
   top: 0;
   align-items: flex-start;
+}
+circle {
+  fill: black;
 }
