@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { FaRegWindowClose } from "react-icons/fa";
 import { CiFacebook, CiLinkedin, CiTwitter } from "react-icons/ci";
@@ -7,48 +7,48 @@ import { CiInstagram } from "react-icons/ci";
 
 const Header = () => {
   const [isShow, setIsShow] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY;
+  //     if (scrollPosition > 0) {
+  //       setIsScrolled(true);
+  //     } else {
+  //       setIsScrolled(false);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
-    <header
-      className="w-full fixed z-2 bg-white"
-    >
+    <header className="w-full fixed z-20 bg-[#343434] text-white">
       <>
         <nav className="flex lg:px-20 px-10 py-4 w-full justify-between">
-          <h1 className="text-xl font-bold font-montserrat">blackBee.</h1>
+          <h1 className="text-xl font-bold font-montserrat">
+            <Link to="/">blackBee.</Link>{" "}
+          </h1>
           <div className="lg:block hidden">
             <ul className="flex gap-10 font-outfit">
               <li className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100">
-                Home
+                <Link to="/">Home</Link>
               </li>
               <li className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100">
-                About Us
+                <Link to="/about"> About Us</Link>
               </li>
               <li className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100">
-                Services
+                <Link to="/services">Services</Link>
               </li>
               <li className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100">
-                Blogs
+                <Link to="blogs">Blogs</Link>
               </li>
               <li className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100">
-                Contact Us
+                <Link to="/contact">Contact Us</Link>
               </li>
             </ul>
           </div>
