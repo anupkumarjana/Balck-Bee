@@ -22,7 +22,7 @@ const Banner = () => {
   }, [inView]); // Update on inView change
 
   return (
-    <div className="w-full mb-20" data-aos="fade-up" ref={ref}>
+    <div className="w-full" data-aos="fade-up" ref={ref}>
       <div className="w-full bg-[#343434] flex lg:flex-row flex-col lg:justify-between justify-center items-center rounded-md lg:px-20">
         <div className="flex flex-col gap-2 justify-center items-center p-10">
           <span className="lg:text-6xl text-3xl font-outfit font-semibold text-white flex">
