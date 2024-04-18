@@ -2,20 +2,31 @@ import React from "react";
 import Hero from "../components/Home/Hero";
 import BuisnessGrowth from "../components/Home/BuisnessGrowth";
 import Banner from "../components/Home/Banner";
+import Offer from "../components/Home/Offer";
+import Testimonials from "../components/Home/Testimonials.";
 
 const HomePage = () => {
   return (
-    <div className="lg:px-32 px-10  pt-20 lg:pt-40 flex-col gap-20  lg:text-start text-center text-wrap ">
-      <Hero />
+    <main className="  pt-20 lg:pt-40 flex-col gap-20  lg:text-start text-center text-wrap">
+      <div className="lg:px-32 px-10">
+        <Hero />
+      </div>
+
       <div className="flex flex-col gap-40">
-        <div>
+        <div className="lg:px-32 px-10">
           <BuisnessGrowth />
         </div>
-        <div>
+        <div className="lg:px-32 px-10">
           <Banner />
         </div>
+        <div className="lg:px-32 px-10">
+          <Offer />
+        </div>
+        <div className="">
+          <Testimonials />
+        </div>
       </div>
-    </div>
+    </main>
   );
 };
 
