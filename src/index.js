@@ -6,5 +6,6 @@ import "./custom.css";
 import { RouterProvider } from "react-router-dom";
 import { AppLayout } from "./App";
 
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={AppLayout} />);

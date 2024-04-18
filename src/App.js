@@ -6,12 +6,14 @@ import ServicesPage from "./pages/ServicesPage";
 import BlogsPage from "./pages/BlogsPage";
 import ContactPage from "./pages/ContactPage";
 import { createBrowserRouter, Outlet } from "react-router-dom";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
     <div>
       <Header />
       <Outlet />
+      <Footer />
     </div>
   );
 };
