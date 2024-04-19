@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="mt-20 lg:px-32 lg:py-20 py-10  px-20 w-full bg-[#343434] text-white text-wrap lg:text-start text-center">
+    <div className="mt-20 lg:px-32 lg:py-20 py-10  px-20 w-full bg-[#002244] text-white text-wrap lg:text-start text-center">
       <div className="flex lg:flex-row lg:justify-between lg:items-start justify-center items-center flex-col flex-wrap">
         {/* ---------------------------------- */}
         <div className="flex flex-col gap-4 lg:w-1/3 w-full">
-          <h2 className="font-bold text-lg">blackBee.</h2>
-          <span className="text-4xl font-montserrat font-medium">
+          <h2 className="font-bold text-lg">blackBee.</h2>  
+          <span className="lg:text-4xl text-2xl font-montserrat font-medium">
             It's Time to Pull in <br />a{" "}
             <span className="text-orange-500"> Professional</span>
           </span>
