@@ -30,7 +30,7 @@ const BuisnessGrowth = () => {
             businesses velit purus aliquet, massa fringilla
           </p>
           <button
-            className="text-lg font-montserrat font-medium flex items-center gap-2 rounded py-4 px-8 bg-[#FF4D30] text-white shadow-custom hover:shadow-custom-hovered transition-all duration-300 ease-in-out "
+            className="text-lg font-montserrat font-medium flex items-center gap-2 rounded-lg py-4 px-8 bg-[#FF4D30] text-white shadow-custom hover:shadow-custom-hovered transition-all duration-300 ease-in-out "
             data-aos="fade-up"
           >
             Contact us
@@ -53,7 +53,7 @@ const BuisnessGrowth = () => {
             by injected humour, or randomised words
           </p>
 
-          <div className="flex flex-col gap-4 w-full">
+          <div className="flex flex-col gap-4 w-full font-montserrat">
             <div className="flex lg:gap-4 gap-2 items-center justify-start border rounded-md lg:text-xl text-sm lg:w-full p-4 shadow-lg flex-shrink text-start"  data-aos="fade-up">
               <span className="text-orange-500">
                 <HiMiniCheckBadge />
