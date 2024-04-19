@@ -1,13 +1,14 @@
 import React from "react";
 import ServiceCard from "./ServiceCard";
 import { services } from "../../utils/services";
+import offerImg from "../../assets/Home/02.png"
 
 const Offer = () => {
   return (
-    <div className="flex flex-wrap justify-start h-auto relative">
-      <div className="flex lg:flex-row flex-col justify-between sticky-top">
+    <div className="flex flex-wrap justify-start h-auto ">
+      <div className="flex lg:flex-row flex-col justify-between sticky-top gap-10 relative">
         {/* left side */}
-        <div className="lg:w-1/2 w-full flex flex-col gap-10 ">
+        <div className="lg:w-1/2 w-full flex flex-col gap-4">
           <span
             className="text-lg font-outfit text-orange-500"
             data-aos="fade-up"
@@ -20,6 +21,7 @@ const Offer = () => {
           >
             What We’re Offering Creative Digital Service
           </h3>
+          <img src={offerImg} alt="offer" className="w-96 drop-shadow"  data-aos="fade-right"/>
         </div>
 
         {/* right side */}
