@@ -79,3 +79,8 @@ body {
 circle {
   fill: black;
 }
+.drop-shadow {
+  filter: drop-shadow(1px 35px 34px #525252);
+  /* filter: drop-shadow(4px 46px 10px #525252); */
+  /* filter: drop-shadow(4px 35px 34px #c1c0c0); */
+}

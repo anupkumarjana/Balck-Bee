@@ -7,8 +7,8 @@ import Testimonials from "../components/Home/Testimonials.";
 
 const HomePage = () => {
   return (
-    <main className="  pt-20 lg:pt-40 flex-col gap-20  lg:text-start text-center text-wrap">
-      <div className="lg:px-32 px-10">
+    <main className="pt-40 flex-col gap-20  lg:text-start text-center text-wrap">
+      <div className=" lg:mb-0 mb-20">
         <Hero />
       </div>
 
@@ -19,7 +19,7 @@ const HomePage = () => {
         <div className="lg:px-32 px-10">
           <Banner />
         </div>
-        <div className="lg:px-32 px-10">
+        <div className="lg:px-32 px-10 ">
           <Offer />
         </div>
         <div className="">
