@@ -4,7 +4,7 @@ import TestimonialCard from "./TestimonialCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-  
+
 const Testimonials = () => {
   const settings = {
     className: "center",
@@ -32,9 +32,9 @@ const Testimonials = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
         },
       },
       {
@@ -48,9 +48,12 @@ const Testimonials = () => {
   };
 
   return (
-    <div className=" mx-auto container overflow-x-hidden">
+    <div className=" mx-auto container overflow-x-hidden mb-20">
       <div className=" w-full flex flex-col justify-center items-center mb-10">
-        <h3 className="text-lg font-outfit text-orange-500 text-center mb-4">
+        <h3
+          className="text-lg font-outfit text-orange-500 text-center mb-4"
+          data-aos="fade-up"
+        >
           TESTIMONIALS
         </h3>
         <span
@@ -61,7 +64,7 @@ const Testimonials = () => {
         </span>
       </div>
 
-      <Slider {...settings} >
+      <Slider {...settings} data-aos="fade-up">
         {testimonials.map((testimonial, index) => (
           <div key={index}>
             <TestimonialCard testimonial={testimonial} />
