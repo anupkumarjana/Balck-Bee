@@ -11,7 +11,6 @@ const HomePage = () => {
       <div className=" lg:mb-0 mb-20">
         <Hero />
       </div>
-
       <div className="flex flex-col gap-40">
         <div className="lg:px-32 px-10">
           <BuisnessGrowth />
