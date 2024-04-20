@@ -1,23 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { FaRegWindowClose } from "react-icons/fa";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 
-const Header = ({ themeToggler }) => {
+const Header = ({ themeToggler, themeMode }) => {
   const [isShow, setIsShow] = useState(false);
-  const [isDarkMode, setDarkMode] = useState(true);
+
+  const [showSubMenu, setShowSubMenu] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
+
+  useEffect(() => {
+    // Set initial theme mode based on browser storage or default to light mode
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setIsDarkMode(storedTheme === "dark");
+    } else {
+      setIsDarkMode(false);
+    }
+  }, []);
 
   const toggleDarkMode = (checked) => {
-    setDarkMode(checked);
+    setIsDarkMode(checked);
+    localStorage.setItem("theme", checked ? "dark" : "light");
+    themeToggler();
   };
 
   return (
     <header
       className={`w-full fixed z-20 shadow-lg ${
-        !isDarkMode
-          ? "bg-[#565656] text-white transition-all ease-in-out duration-1000"
-          : "bg-white text-black"
+        themeMode === "light"
+          ? "bg-white text-black transition-all  ease-in-out duration-500"
+          : "bg-[#565656] text-white transition-all ease-in-out duration-500"
       }`}
     >
       <>
@@ -33,8 +49,33 @@ const Header = ({ themeToggler }) => {
               <li className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100">
                 <Link to="/about"> About Us</Link>
               </li>
-              <li className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100">
-                <Link to="/services">Services</Link>
+              <li
+                className="cursor-pointer transition-all ease-in-out duration-100 relative"
+                onMouseEnter={() => setShowSubMenu(true)}
+                onMouseLeave={() => setShowSubMenu(false)}
+              >
+                <span className=" hover:text-orange-400">Services</span>
+                {showSubMenu && (
+                  <ul
+                    className={`absolute z-21 transition-all ease-in-out duration-300 text-start p-6 w-60 shadow-b-lg ${
+                      themeMode === "light"
+                        ? "bg-white text-black transition-all ease-in-out duration-500"
+                        : "bg-[#565656] text-white transition-all ease-in-out duration-500"
+                    }`}
+                  >
+                    <li className="hover:text-orange-500">
+                      <Link to="/services/packages">Packages</Link>
+                    </li>
+                    <li className="hover:text-orange-500">
+                      <Link to="/services/content-marketing">
+                        Content Marketing
+                      </Link>
+                    </li>
+                    <li className="hover:text-orange-500">
+                      <Link to="/services/media-buying">Media Buying</Link>
+                    </li>
+                  </ul>
+                )}
               </li>
               <li className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100">
                 <Link to="blogs">Blogs</Link>
@@ -45,18 +86,15 @@ const Header = ({ themeToggler }) => {
             </ul>
           </div>
           <div className="flex items-center gap-4">
-            <button onClick={themeToggler}>
-              <DarkModeSwitch
-                style={{
-                  color: "black",
-                  fill: "black",
-                  stroke: "currentColor",
-                }}
-                checked={isDarkMode}
-                onChange={toggleDarkMode}
-                size={30}
-              />
-            </button>
+            <DarkModeSwitch
+              style={{
+                color: "black",
+                stroke: "currentColor",
+              }}
+              checked={isDarkMode}
+              onChange={toggleDarkMode}
+              size={30}
+            />
             <button
               className="block lg:hidden text-2xl font-semibold transition-all ease-in-out duration-200"
               onClick={() => setIsShow(true)}
@@ -98,6 +136,19 @@ const Header = ({ themeToggler }) => {
                 onClick={() => setIsShow(false)}
               >
                 <Link to="/services">SERVICES</Link>
+                <ul>
+                  <li className="hover:text-orange-500">
+                    <Link to="/services/packages">Packages</Link>
+                  </li>
+                  <li className="hover:text-orange-500">
+                    <Link to="/services/content-marketing">
+                      Content Marketing
+                    </Link>
+                  </li>
+                  <li className="hover:text-orange-500">
+                    <Link to="/services/media-buying">Media Buying</Link>
+                  </li>
+                </ul>
               </li>
               <li
                 className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100"
