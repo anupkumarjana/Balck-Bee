@@ -57,7 +57,7 @@ const Header = ({ themeToggler, themeMode }) => {
                 <span className=" hover:text-orange-400">Services</span>
                 {showSubMenu && (
                   <ul
-                    className={`absolute z-21 transition-all ease-in-out duration-300 text-start p-6 w-60 shadow-b-lg ${
+                    className={`absolute z-21 transition-all ease-in-out duration-300 text-start p-6 w-60 shadow-b-lg flex flex-col gap-2 ${
                       themeMode === "light"
                         ? "bg-white text-black transition-all ease-in-out duration-500"
                         : "bg-[#565656] text-white transition-all ease-in-out duration-500"
