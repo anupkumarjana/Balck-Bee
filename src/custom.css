@@ -22,7 +22,7 @@ body {
   );
 }
 
-.bounce2 {
+/* .bounce2 {
   animation: bounce2 2s ease;
 }
 @keyframes bounce2 {
@@ -50,7 +50,7 @@ body {
     transform: translate3d(0, 0, 0);
     opacity: 1;
   }
-}
+} */
 
 /* .card-shadow{
   box-shadow: 0 -5px 10px black,
@@ -76,11 +76,87 @@ body {
   top: 0;
   align-items: flex-start;
 }
+/* for darkmode button */
 circle {
-  fill: black;
+  fill: "black";
 }
+
+/* drop shadow  */
 .drop-shadow {
   filter: drop-shadow(1px 35px 34px #525252);
   /* filter: drop-shadow(4px 46px 10px #525252); */
   /* filter: drop-shadow(4px 35px 34px #c1c0c0); */
+}
+
+/* for scroll bar */
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: white;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ff4d30;
+  border-radius: 20px;
+}
+
+/* .slick-track
+{
+    display: flex !important;
+}
+
+.slick-slide
+{
+    height: inherit !important;
+} */
+
+/* div .slick-track{
+  padding: 100px 0px;
+} */
+
+circle {
+  fill: black;
+}
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+}
+
+.offer .right-side {
+  flex: 1;
+  overflow-y: scroll;
+  /* no-scrollbar; */
+  /* scroll-smooth: true; */
+}
+
+.partner-scroll-container {
+  overflow: hidden; /* Hide overflowing content */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.partner-scroll {
+  display: flex; /* Display images in a row */
+  animation: scroll 20s linear infinite; /* Define animation */
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%); /* Start from right side */
+  }
+  to {
+    transform: translateX(-100%); /* Move to left side */
+  }
+}
+
+.partner-scroll img {
+  margin-right: 20px; /* Add spacing between images */
+  width: 50%;
 }

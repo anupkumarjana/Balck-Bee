@@ -7,3 +7,12 @@ export const GlobalStyles = createGlobalStyle`
     transition: all 0.50s linear;
   }
   `;
+// Function to set theme mode
+export const setThemeMode = (mode) => {
+  localStorage.setItem('theme', mode);
+};
+
+// Function to retrieve theme mode
+export const getThemeMode = () => {
+  return localStorage.getItem('theme') || 'light'; // Default to light mode if not set
+};
