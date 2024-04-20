@@ -15,9 +15,9 @@ const Testimonials = () => {
     slidesToShow: 3,
     slidesToScroll: 4,
     initialSlide: 0,
-    speed: 500,
+    speed: 1000,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     swipeToSlide: true,
     responsive: [
       {
@@ -27,6 +27,14 @@ const Testimonials = () => {
           slidesToScroll: 3,
           infinite: true,
           dots: true,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
         },
       },
       {
@@ -64,7 +72,7 @@ const Testimonials = () => {
         </span>
       </div>
 
-      <Slider {...settings} data-aos="fade-up">
+      <Slider {...settings} data-aos="fade-up h-full">
         {testimonials.map((testimonial, index) => (
           <div key={index}>
             <TestimonialCard testimonial={testimonial} />
