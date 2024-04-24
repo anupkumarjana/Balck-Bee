@@ -9,12 +9,15 @@ import partner5 from "../../assets/About/partner5.png";
 const PartnerScroll = () => {
   return (
     <div className="partner-scroll-container">
-      <h3
-        className="text-lg text-orange-500 font-montserrat text-center"
-        data-aos="fade-up"
-      >
-        OUR PARTNERS
-      </h3>
+      <div className="font-montserrat flex flex-col gap-2 justify-center items-center text-center">
+        <h3 className="text-lg text-orange-500 " data-aos="fade-up">
+          OUR PARTNERS
+        </h3>
+        <p className="lg:w-96 text-wrap" data-aos="fade-up">
+          Our partners fuel our success, driving innovation and collaboration at
+          every step.
+        </p>
+      </div>
       <div className="partner-scroll" data-aos="fade-up">
         <img src={partner1} alt="partner1" />
         <img src={partner2} alt="partner2" />
