@@ -1,10 +1,18 @@
 import React from 'react'
+import ContactHero from '../components/Contact/ContactHero';
+import ContactForm from '../components/Contact/ContactForm';
 
 const ContactPage = () => {
   return (
-    <div className="lg:px-40 px-10  pt-20 lg:pt-20 first-letter:flex flex-col gap-20  lg:text-start text-center text-wrap overflow-x-hidden">
-      ContactPage
+    <main className="lg:px-40 px-10 pt-40 flex flex-col gap-20 lg:gap-40  lg:text-start text-center text-wrap ">
+    <div>
+        <ContactHero/>
     </div>
+    <div>
+      <ContactForm/>
+    </div>
+    
+    </main>
   );
 }
 
