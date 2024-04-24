@@ -22,7 +22,7 @@ const AboutCard = () => {
         {aboutCardData.map((data, index) => (
           <div
             key={index}
-            className="flex flex-col justify-center items-center gap-4 text-center lg:max-w-60 lg:w-auto w-full border rounded-xl shadow-2xl px-4 py-10 sticky bg-[#363537] text-white"
+            className="flex flex-col justify-center items-center gap-4 text-center lg:max-w-60 lg:w-auto w-full border rounded-xl shadow-2xl px-4 py-10 sticky bg-[#002244] text-white"
             style={{ minWidth: "240px", top: `calc(80px * ${index + 1})` }}
           >
             <span className="text-4xl font-bold text-orange-500 flex justify-center">
