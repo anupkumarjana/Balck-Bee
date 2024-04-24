@@ -4,12 +4,17 @@ import { aboutCardData } from "../../utils/AboutCardData";
 const AboutCard = () => {
   return (
     <div className="flex flex-col gap-20">
-      <h3
-        className="text-lg text-orange-500 font-montserrat text-center"
-        data-aos="fade-up"
-      >
-        HOW IT WORKS
-      </h3>
+      <div className="font-montserrat flex flex-col gap-2 justify-center items-center text-center">
+        <h3 className="text-lg text-orange-500 " data-aos="fade-up">
+          HOW IT WORKS
+        </h3>
+        <p className="lg:w-96 text-wrap" data-aos="fade-up">
+          Through thorough research and meticulous data collection, we optimize
+          targeting to deliver impactful results for our clients as a digital
+          marketing agency.
+        </p>
+      </div>
+
       <div
         className="flex justify-center gap-10 items-stretch flex-wrap relative"
         data-aos="fade-up"
