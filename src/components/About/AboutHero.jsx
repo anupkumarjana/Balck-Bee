@@ -32,7 +32,7 @@ const AboutHero = () => {
             <br />
             An Award Winning Digital Marketing Agency
           </span>
-          <div className="leading-relaxed font-outfit font-light flex flex-col gap-2">
+          <div className="leading-relaxed font-outfit font-light flex flex-col gap-2 text-start">
             <div className="flex items-center gap-2" data-aos="fade-down">
               {" "}
               <span className="text-lg text-orange-500">
