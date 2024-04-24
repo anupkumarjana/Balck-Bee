@@ -14,13 +14,14 @@ const OurTeam = () => {
           brand's digital presence.
         </p>
       </div>
-      <div className="w-full flex flex-wrap justify-center items-center gap-10">
+      <div className="w-full flex flex-wrap justify-center items-center lg:gap-10 gap-4 relative">
         {ourTeam.map((member, index) => (
           <a
             key={index}
             href={member.linkedIn}
             target="_blank"
             rel="noreferrer"
+            className="sticky top-20"
           >
             <div
               key={index}
