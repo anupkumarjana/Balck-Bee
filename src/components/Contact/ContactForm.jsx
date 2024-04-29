@@ -1,22 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import contactImg from "../../assets/Contact/contact.png";
 
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        "https://blackbee-digital.com/page/send_contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams(formData).toString(),
+        }
+      );
+      if (response.ok) {
+        console.log("Form submitted successfully!");
+        // Reset form data after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        console.error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <div className="flex flex-col gap-20">
       <div className="font-montserrat flex flex-col gap-2 justify-center items-center text-center">
         <h3 className="text-lg text-orange-500 " data-aos="fade-up">
-         CONNECT WITH US
+          CONNECT WITH US
         </h3>
         <p className="lg:w-96 text-wrap" data-aos="fade-up">
           Our dedicated team leverages expertise and commitment to deliver
           exceptional value and tailored solutions to our customers.
         </p>
       </div>
-      <div className="flex lg:flex-row flex-col justify-between lg:items-start items-center font-montserrat lg:gap-40 gap-20">
+      <div
+        className="flex lg:flex-row flex-col justify-between lg:items-start items-center font-montserrat lg:gap-40 gap-20"
+        data-aos="fade-up"
+      >
         {/* --------------------left section---------------------------- */}
-        <form className="lg:w-1/2 w-full flex flex-col gap-6 text-start ">
-          <div className="" data-aos="fade-up">
+        <form
+          className="lg:w-1/2 w-full flex flex-col gap-6 text-start "
+          onSubmit={handleSubmit}
+        >
+          <div className="">
             <label htmlFor="name" className="block font-semibold mb-2">
               Name
             </label>
@@ -25,10 +73,12 @@ const ContactForm = () => {
               type="text"
               id="name"
               name="name"
+              value={formData.name}
+              onChange={handleChange}
               className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black"
             />
           </div>
-          <div className="" data-aos="fade-up">
+          <div className="">
             <label htmlFor="email" className="block  font-semibold mb-2">
               Email
             </label>
@@ -37,22 +87,26 @@ const ContactForm = () => {
               type="email"
               id="email"
               name="email"
+              value={formData.email}
+              onChange={handleChange}
               className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black"
             />
           </div>
-          <div className="" data-aos="fade-up">
+          <div className="">
             <label htmlFor="phone" className="block  font-semibold mb-2">
               Phone
             </label>
             <input
               required
-              type="phone"
+              type="tel"
               id="phone"
               name="phone"
+              value={formData.phone}
+              onChange={handleChange}
               className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black"
             />
           </div>
-          <div className="" data-aos="fade-up">
+          <div className="">
             <label htmlFor="message" className="block font-semibold mb-2">
               Message
             </label>
@@ -61,13 +115,14 @@ const ContactForm = () => {
               id="message"
               name="message"
               rows="4"
+              value={formData.message}
+              onChange={handleChange}
               className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black"
             ></textarea>
           </div>
           <button
             type="submit"
-            className=" w-40 text-center text-lg font-montserrat font-medium rounded-xl lg:py-4 lg:px-8 px-4 py-2 bg-[#FF4D30] text-white shadow-custom hover:shadow-custom-hovered transition-all duration-300 ease-in-out"
-            onClick={(e) => e.preventDefault()}
+            className="w-40 text-center text-lg font-montserrat font-medium rounded-xl lg:py-4 lg:px-8 px-4 py-2 bg-[#FF4D30] text-white shadow-custom hover:shadow-custom-hovered transition-all duration-300 ease-in-out"
           >
             Send
           </button>
