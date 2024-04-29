@@ -1,18 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import contactImg from "../../assets/Contact/contact.png";
+import useForm from "../../hooks/useForm";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const { formData, handleChange, resetForm } = useForm({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,12 +26,7 @@ const ContactForm = () => {
       if (response.ok) {
         console.log("Form submitted successfully!");
         // Reset form data after successful submission
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          message: "",
-        });
+        resetForm();
       } else {
         console.error("Form submission failed");
       }
