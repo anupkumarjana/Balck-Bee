@@ -17,6 +17,7 @@ const ContactForm = () => {
         "https://blackbee-digital.com/page/send_contact",
         {
           method: "POST",
+          mode: "no-cors",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
