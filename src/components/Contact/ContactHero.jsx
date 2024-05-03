@@ -12,21 +12,21 @@ const ContactHero = () => {
         </span>
       </div>
       {/* ---------------------------content section------------------------------------- */}
-      <div className="flex lg:flex-row  flex-col lg:gap-20 gap-10 justify-between lg:items-start items-center">
+      <div className="flex lg:flex-row  flex-col lg:gap-20 gap-10 lg:justify-between justify-center lg:items-start items-center">
         {/* -----------------left section------------------ */}
         <div className="lg:w-1/2 w-full">
-          <div className="flex flex-col gap-20">
-            <h3
-              className="text-lg text-orange-500 font-montserrat text-center lg:text-start"
-              data-aos="fade-up"
+          <div className="flex flex-col gap-20 lg:justify-start justify-center ">
+            <h2
+              className="text-lg lg:text-2xl text-orange-500 font-montserrat font-semibold "
+              data-aos="fade-down"
             >
-              FIND US
-            </h3>
+              CONTACT US
+            </h2>
             <iframe
               title="google map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.9870098184197!2d87.33324917990909!3d23.53296962420641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f771cc704ce0b7%3A0xd84f8a970b7686f8!2sstreet-03%2C%20Saratpally%2C%20Bidhannagar%2C%20Durgapur%2C%20West%20Bengal%20713206!5e0!3m2!1sen!2sin!4v1713684845078!5m2!1sen!2sin"
-              width="450"
-              height="450"
+              width="250"
+              height="250"
               style={{ border: 0 }}
               allowfullscreen=""
               loading="lazy"
@@ -50,7 +50,7 @@ const ContactHero = () => {
           </p>
 
           {/* -------------------card section------------------------------ */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 text-start">
             <div className="flex gap-4 items-center" data-aos="fade-up">
               <span className="text-4xl text-orange-500">
                 <ImLocation2 />
