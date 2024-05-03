@@ -1,38 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import contactImg from "../../assets/Contact/contact.png";
 import useForm from "../../hooks/useForm";
 
 const ContactForm = () => {
-  const { formData, handleChange, resetForm } = useForm({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  const validationRules = {
+    name: {
+      validate: (value) => value.trim() !== "",
+      message: "Name is required",
+    },
+    email: {
+      validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+      message: "Invalid email address",
+    },
+    phone: {
+      validate: (value) => /^[0-9]+$/.test(value),
+      message: "Invalid phone number",
+    },
+    message: {
+      validate: (value) => value.trim() !== "",
+      message: "Message is required",
+    },
+  };
 
-  const handleSubmit = async (e) => {
+  const { formData, errors, handleChange, handleSubmit } = useForm(
+    {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    },
+    validationRules
+  );
+
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch(
-        "https://blackbee-digital.com/page/send_contact",
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: new URLSearchParams(formData).toString(),
-        }
-      );
-      if (response.ok) {
-        console.log("Form submitted successfully!");
-        // Reset form data after successful submission
-        resetForm();
-      } else {
-        console.error("Form submission failed");
-      }
-    } catch (error) {
-      console.error("Error:", error);
+    if (await handleSubmit()) {
+      setFormSubmitted(true);
+      setTimeout(() => {
+        setFormSubmitted(false);
+      }, 5000); // Reset the form submitted state after 5 seconds
     }
   };
 
@@ -52,9 +60,15 @@ const ContactForm = () => {
         data-aos="fade-up"
       >
         {/* --------------------left section---------------------------- */}
+        {formSubmitted && (
+          <div className="text-green-500 text-center">
+            Thank you for contacting Blackbee-Digital. We'll get back to you
+            soon.
+          </div>
+        )}
         <form
           className="lg:w-1/2 w-full flex flex-col gap-6 text-start "
-          onSubmit={handleSubmit}
+          onSubmit={handleFormSubmit}
         >
           <div className="">
             <label htmlFor="name" className="block font-semibold mb-2">
@@ -67,8 +81,11 @@ const ContactForm = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black"
+              className={`w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black ${
+                errors.name ? "border-red-500" : ""
+              }`}
             />
+            {errors.name && <span className="text-red-500">{errors.name}</span>}
           </div>
           <div className="">
             <label htmlFor="email" className="block  font-semibold mb-2">
@@ -81,8 +98,13 @@ const ContactForm = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black"
+              className={`w-full border border-   gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black ${
+                errors.email ? "border-red-500" : ""
+              }`}
             />
+            {errors.email && (
+              <span className="text-red-500">{errors.email}</span>
+            )}
           </div>
           <div className="">
             <label htmlFor="phone" className="block  font-semibold mb-2">
@@ -95,8 +117,13 @@ const ContactForm = () => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black"
+              className={`w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black ${
+                errors.phone ? "border-red-500" : ""
+              }`}
             />
+            {errors.phone && (
+              <span className="text-red-500">{errors.phone}</span>
+            )}
           </div>
           <div className="">
             <label htmlFor="message" className="block font-semibold mb-2">
@@ -109,8 +136,13 @@ const ContactForm = () => {
               rows="4"
               value={formData.message}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black"
+              className={`w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black ${
+                errors.message ? "border-red-500" : ""
+              }`}
             ></textarea>
+            {errors.message && (
+              <span className="text-red-500">{errors.message}</span>
+            )}
           </div>
           <button
             type="submit"
