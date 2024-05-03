@@ -22,20 +22,29 @@ const PackageSection = () => {
             Choose the optimal price plan
           </h3>
         </div>
-        <div className="lg:w-1/2 w-full flex flex-col lg:items-start items-center gap-4 font-montserrat">
+        <div
+          className="lg:w-1/2 w-full flex flex-col lg:items-start items-center gap-4 font-montserrat"
+          data-aos="fade-up"
+        >
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Consequuntur dolore modi, animi iure magnam facere, sint officia
             dolorem quis voluptas placeat? Modi similique dolores iusto quae
             consequuntur vitae, fugit minus.
           </p>
-          <button className="text-lg max-w-52 text-center font-montserrat font-medium flex items-center gap-2 rounded-xl lg:py-4 lg:px-8 px-4 py-2 bg-[#FF4D30] text-white shadow-custom hover:shadow-custom-hovered transition-all duration-300 ease-in-out  button">
-            <Link to="/contact">Contact Us</Link>
-          </button>
+          <Link to="/contact">
+            {" "}
+            <button className="text-lg max-w-52 text-center font-montserrat font-medium flex items-center gap-2 rounded-xl lg:py-4 lg:px-8 px-4 py-2 bg-[#FF4D30] text-white shadow-custom hover:shadow-custom-hovered transition-all duration-300 ease-in-out  button">
+              Contact Us
+            </button>
+          </Link>
         </div>
       </div>
       {/* ------------------------------------card section---------------------------------------------------- */}
-      <div className="w-full flex lg:flex-row flex-col flex-wrap lg:justify-between gap-10 justify-center items-center">
+      <div
+        className="w-full flex lg:flex-row flex-col flex-wrap lg:justify-between gap-10 justify-center items-center"
+        data-aos="fade-up"
+      >
         {packageData.map((pack, index) => (
           <PackageCard data={pack} key={index} />
         ))}
