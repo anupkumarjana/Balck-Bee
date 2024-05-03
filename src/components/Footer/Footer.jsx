@@ -51,7 +51,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-4 font-montserrat">
             <h4 className="text-lg font-medium text-white">Contact us</h4>
-            <ul className="flex flex-col gap-2 text-sm  text-[#92989B]">
+            <ul className="flex flex-col gap-2 text-sm  text-[#92989B] text-start">
               <li className=" flex gap-2 items-center">
                 <span className="text-orange-500 text-lg">
                   <BsFillBuildingsFill />
@@ -85,7 +85,7 @@ const Footer = () => {
               </li>
               <li className="flex gap-2 justify-start items-center text-xl mt-6">
                 <span className="cursor-pointer hover:text-orange-500">
-                  <Link to="https://facebook.com"  target="_blank">
+                  <Link to="https://facebook.com" target="_blank">
                     <CiFacebook />
                   </Link>
                 </span>
@@ -111,7 +111,6 @@ const Footer = () => {
             target="_blank"
             to="https://anupz.dev"
             className="hover:text-orange-500"
-       
           >
             anupz.dev
           </Link>
