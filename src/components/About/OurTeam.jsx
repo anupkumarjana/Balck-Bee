@@ -21,7 +21,7 @@ const OurTeam = () => {
             href={member.linkedIn}
             target="_blank"
             rel="noreferrer"
-            className="sticky top-20"
+            className="lg:static sticky top-20"
           >
             <div
               key={index}
