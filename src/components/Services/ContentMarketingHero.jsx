@@ -31,25 +31,31 @@ const ContentMarketingHero = () => {
               className="text-lg font-normal font-montserrat"
               data-aos="fade-up"
             >
-              If you're looking for top-quality content that engages, informs,
-              and converts your audience, you've come to the right place. Our
-              experienced team works closely with you to understand your brand
-              and your target audience, and we create content that speaks
-              directly to them.
+              Effective websites require quality articles to best reflect their
+              brand or services. If you’d like your website to accomplish your
+              sales goals, it must comprise internet search engine optimized,
+              descriptive, and first, and content that is comprehensible. At
+              Thrive, we offer our clients a satisfied writing service that
+              meets the high standards that a specialist, high quality internet
+              site requires.
             </p>
             <p
               className="text-lg font-normal font-montserrat "
               data-aos="fade-up"
             >
-              At Lettery, we're committed to providing our clients with the
-              highest level of service and support. Contact us today to learn
-              more about how we can help you achieve your content and social
-              media goals.
+              We are an expert, personable web marketing support, and we will
+              take the time to operate closely together with you how best to
+              convey your site’s purpose. We will thoroughly research your
+              website’s brand, services, purpose, and audience to tailor made
+              material which efficiently and tells your story.
             </p>
           </div>
         </div>
         {/* ------------------------right section----------------------- */}
-        <div className="lg:w-1/2  w-full flex flex-wrap gap-10" data-aos="fade-up">
+        <div
+          className="lg:w-1/2  w-full flex flex-wrap gap-10"
+          data-aos="fade-up"
+        >
           {ContentMarketingData.map((data, index) => (
             <div key={index} className="lg:w-60 w-full">
               <ContentMarketingCard data={data} />
