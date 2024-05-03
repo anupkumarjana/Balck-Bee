@@ -1,6 +1,7 @@
-import React from 'react'
-import ContentMarketingHero from '../components/Services/ContentMarketingHero'
+import React from "react";
+import ContentMarketingHero from "../components/Services/ContentMarketingHero";
 import PackageSection from "../components/Services/PackageSection";
+import Banner from "../components/Home/Banner";
 
 const ContentMarketingPage = () => {
   return (
@@ -9,10 +10,13 @@ const ContentMarketingPage = () => {
         <ContentMarketingHero />
       </div>
       <div>
+        <Banner />
+      </div>
+      <div>
         <PackageSection />
       </div>
     </main>
   );
-}
+};
 
-export default ContentMarketingPage
+export default ContentMarketingPage;
