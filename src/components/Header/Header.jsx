@@ -114,11 +114,11 @@ const Header = ({ themeToggler, themeMode }) => {
           {/* -------------------overlay------------------------ */}
 
           {/* -------------------------phone navbar-------------------------------- */}
-          <nav className="absolute top-0 right-0 h-screen bg-white text-black font-montserrat font-medium w-1/2 flex justify-start pt-6 items-center pr-10 flex-col gap-10 transition-all ease-in-out duration-300 z-20">
+          <nav className="absolute top-0 right-0 h-screen bg-white text-black font-montserrat font-medium w-1/2 flex justify-centter pt-6 items-center flex-col gap-10 transition-all ease-in-out duration-300 z-20">
             <button onClick={() => setIsShow(false)} className="text-xl">
               <FaRegWindowClose />
             </button>
-            <ul className="flex flex-col justify-center gap-10 font-outfit">
+            <ul className="flex flex-col justify-center gap-4 font-outfit">
               <li
                 className="cursor-pointer hover:text-orange-400 transition-all ease-in-out duration-100"
                 onClick={() => setIsShow(false)}
@@ -136,7 +136,7 @@ const Header = ({ themeToggler, themeMode }) => {
                 onClick={() => setIsShow(false)}
               >
                 <Link to="/services">SERVICES</Link>
-                <ul>
+                <ul className="pl-2 pt-2">
                   <li className="hover:text-orange-500">
                     <Link to="/services/packages">Packages</Link>
                   </li>
