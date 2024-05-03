@@ -63,9 +63,9 @@ const Header = ({ themeToggler, themeMode }) => {
                         : "bg-[#565656] text-white transition-all ease-in-out duration-500"
                     }`}
                   >
-                    <li className="hover:text-orange-500">
+                    {/* <li className="hover:text-orange-500">
                       <Link to="/services/packages">Packages</Link>
-                    </li>
+                    </li> */}
                     <li className="hover:text-orange-500">
                       <Link to="/services/content-marketing">
                         Content Marketing
@@ -137,9 +137,9 @@ const Header = ({ themeToggler, themeMode }) => {
               >
                 <Link to="/services">SERVICES</Link>
                 <ul className="pl-2 pt-2">
-                  <li className="hover:text-orange-500">
+                  {/* <li className="hover:text-orange-500">
                     <Link to="/services/packages">Packages</Link>
-                  </li>
+                  </li> */}
                   <li className="hover:text-orange-500">
                     <Link to="/services/content-marketing">
                       Content Marketing
