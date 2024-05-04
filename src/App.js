@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import BlogsPage from "./pages/BlogsPage";
 import ContactPage from "./pages/ContactPage";
-import PackagesPage from "./pages/PackagesPage";
+// import PackagesPage from "./pages/PackagesPage";
 import ContentMarketingPage from "./pages/ContentMarketingPage";
 import MediaBuyingPage from "./pages/MediaBuyingPage";
 import { createBrowserRouter, Outlet } from "react-router-dom";
@@ -59,10 +59,10 @@ export const AppLayout = createBrowserRouter([
         path: "/services",
         // element: <ServicesPage />,
         children: [
-          {
-            path: "/services/packages",
-            element: <PackagesPage />,
-          },
+          // {
+          //   path: "/services/packages",
+          //   element: <PackagesPage />,
+          // },
           {
             path: "/services/content-marketing",
             element: <ContentMarketingPage />,
