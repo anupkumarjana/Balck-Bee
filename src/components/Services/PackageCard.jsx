@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const PackageCard = ({ data }) => {
   return (
-    <div className=" lg:w-auto w-full flex flex-col justify-center items-center gap-6 font-montserrat border rounded-xl shadow-2xl p-10 text-center">
+    <div className=" lg:w-auto w-full flex flex-col justify-center items-center gap-6 font-montserrat border rounded-xl shadow-2xl p-10 text-center hover:scale-105 transition-all ease-in-out duration-200">
       <div className="w-full flex flex-col justify-center items-center gap-4 ">
         <h4 className="text-xl font-medium">{data.planTitle}</h4>
         <span className="text-4xl font-bold">

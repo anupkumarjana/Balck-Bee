@@ -56,7 +56,7 @@ const ContactForm = () => {
         </p>
       </div>
       <div
-        className="flex lg:flex-row flex-col justify-between lg:items-start items-center font-montserrat lg:gap-40 gap-20"
+        className="flex lg:flex-row flex-col-reverse justify-between lg:items-start items-center font-montserrat lg:gap-40 gap-20"
         data-aos="fade-up"
       >
         {/* --------------------left section---------------------------- */}
@@ -79,6 +79,7 @@ const ContactForm = () => {
               type="text"
               id="name"
               name="name"
+              placeholder="Your Full Name"
               value={formData.name}
               onChange={handleChange}
               className={`w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black ${
@@ -96,6 +97,7 @@ const ContactForm = () => {
               type="email"
               id="email"
               name="email"
+              placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
               className={`w-full border border-   gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black ${
@@ -115,6 +117,7 @@ const ContactForm = () => {
               type="tel"
               id="phone"
               name="phone"
+              placeholder="Your Contact No."
               value={formData.phone}
               onChange={handleChange}
               className={`w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black ${
@@ -133,6 +136,7 @@ const ContactForm = () => {
               required
               id="message"
               name="message"
+              placeholder="Your Message"
               rows="4"
               value={formData.message}
               onChange={handleChange}

@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import BlogHero from "../components/Blogs/BlogHero";
 
 const BlogsPage = () => {
   return (
-    <div className="lg:px-40 px-10  pt-20 lg:pt-20 first-letter:flex flex-col gap-20  lg:text-start text-center text-wrap overflow-x-hidden">
-      BlogsPage
-    </div>
+    <main className="lg:px-40 px-10 pt-40 flex flex-col gap-20 lg:gap-40  lg:text-start text-center text-wrap ">
+      <div>
+        <BlogHero />
+      </div>
+    </main>
   );
-}
+};
 
-export default BlogsPage
+export default BlogsPage;
