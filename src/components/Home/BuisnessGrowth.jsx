@@ -9,7 +9,7 @@ const BuisnessGrowth = () => {
   // useStaggeredBottomToTopAnimation(".");
   return (
     <div className="">
-      <div className="w-full flex lg:flex-row flex-col lg:text-start text-center justify-between gap-20">
+      <div className="w-full flex lg:flex-row flex-col-reverse lg:text-start text-center justify-between gap-20">
         <div className="lg:w-1/2 w-full flex flex-col lg:justify-start justify-center lg:items-baseline items-center gap-10 ">
           <img
             src={about}
