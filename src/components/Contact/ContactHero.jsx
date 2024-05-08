@@ -6,11 +6,11 @@ import { IoIosMail } from "react-icons/io";
 const ContactHero = () => {
   return (
     <div className="flex flex-col gap-20">
-      <div className="mb-10">
+      {/* <div className="mb-10">
         <span className="text-sm font-montserrat font-medium">
           HOME/<span className="text-orange-500">CONTACT US</span>
         </span>
-      </div>
+      </div> */}
       {/* ---------------------------content section------------------------------------- */}
       <div className="flex lg:flex-row  flex-col lg:gap-20 gap-10 lg:justify-between justify-center lg:items-start items-center">
         {/* -----------------left section------------------ */}

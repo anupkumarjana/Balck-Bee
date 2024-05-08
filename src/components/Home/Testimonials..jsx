@@ -13,7 +13,7 @@ const Testimonials = () => {
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 3,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     initialSlide: 0,
     speed: 1000,
     autoplay: true,
@@ -24,7 +24,7 @@ const Testimonials = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -33,7 +33,7 @@ const Testimonials = () => {
         breakpoint: 800,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },

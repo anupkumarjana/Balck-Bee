@@ -16,10 +16,10 @@ import {
   getThemeMode,
 } from "./darkmode/globalStyles";
 import { lightTheme, darkTheme } from "./darkmode/Theme";
+import SingleBlogPage from "./components/Blogs/SingleBlogPage";
 
 const App = () => {
   const [theme, setTheme] = useState(getThemeMode());
-
   useEffect(() => {
     setThemeMode(theme);
   }, [theme]);
@@ -76,7 +76,14 @@ export const AppLayout = createBrowserRouter([
       {
         path: "/blogs",
         element: <BlogsPage />,
+        children: [
+          {
+            path: "/blogs/:title",
+            element: <SingleBlogPage />,
+          },
+        ],
       },
+
       {
         path: "/contact",
         element: <ContactPage />,

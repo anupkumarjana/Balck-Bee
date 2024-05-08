@@ -5,7 +5,7 @@ const AboutCard = () => {
   return (
     <div className="flex flex-col gap-20">
       <div className="font-montserrat flex flex-col gap-2 justify-center items-center text-center">
-        <h3 className="text-lg text-orange-500 " data-aos="fade-up">
+        <h3 className="text-lg text-orange-500 " >
           HOW IT WORKS
         </h3>
         <p className="lg:w-96 text-wrap" data-aos="fade-up">

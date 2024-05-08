@@ -3,12 +3,12 @@ import React from "react";
 const BlogHero = () => {
   return (
     <div className="flex flex-col gap-20">
-      <div className="mb-10">
+      {/* <div className="mb-10">
         <span className="text-sm font-montserrat font-medium">
           HOME/
           <span className="text-orange-500">BLOGS</span>
         </span>
-      </div>
+      </div> */}
       <h2
         className="text-lg lg:text-2xl text-orange-500 font-montserrat font-semibold "
         data-aos="fade-down"

@@ -5,11 +5,11 @@ import { LiaConnectdevelop } from "react-icons/lia";
 const AboutHero = () => {
   return (
     <div>
-      <div className="mb-10">
+      {/* <div className="mb-10">
         <span className="text-sm font-montserrat font-medium">
           HOME/<span className="text-orange-500">ABOUT</span>
         </span>
-      </div>
+      </div> */}
       <div className="flex lg:flex-row flex-col-reverse lg:justify-between justify-center lg:items-start gap-20">
         <div className="lg:w-1/2 w-full">
           <img
